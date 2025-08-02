@@ -1,0 +1,34 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env.local
+.env.*.local
+
+# Database
+dev.db
+dev.db-journal
+
+# Prisma
+prisma/migrations/*/migration.sql

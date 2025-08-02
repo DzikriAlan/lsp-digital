@@ -1,0 +1,18 @@
+import prisma from '~/lib/prisma'
+
+export default defineEventHandler(async (event) => {
+  try {
+    const users = await prisma.user.findMany({
+      include: {
+        posts: true
+      }
+    })
+    
+    return users
+  } catch (error) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Failed to fetch users'
+    })
+  }
+})
