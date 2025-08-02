@@ -1,108 +1,136 @@
 # LSP Digital
 
-A modern web application built with Nuxt 3, Shadcn/UI, and Prisma.
+Aplikasi web modern yang dibangun dengan Nuxt 3, Shadcn/UI, dan Prisma.
 
-## Features
+## Fitur
 
-- 🚀 **Nuxt 3** - The Intuitive Vue Framework
-- 🎨 **Nuxt UI** - Beautiful and accessible UI components built with Tailwind CSS
-- 🗄️ **Prisma** - Next-generation ORM for Node.js and TypeScript
-- 🌙 **Dark Mode** - Built-in dark mode support
-- 📱 **Responsive** - Mobile-first responsive design
-- 🔧 **TypeScript** - Full TypeScript support
+- 🚀 **Nuxt 3**
+- 🎨 **Nuxt UI**
+- 🗄️ **Prisma**
+- 🌙 **Dark Mode**
+- 📱 **Responsif**
+- 🔧 **TypeScript**
 
-## Prerequisites
+## Prasyarat
 
-- Node.js v20.19.0 or higher
-- npm or yarn
+- Node.js v20.19.0 atau lebih tinggi
+- Mysql v5.7.33-win32
+- laragon php-8.1.10
+- npm atau yarn
 
-## Quick Start
+## Mulai Cepat
 
-1. **Install dependencies:**
+1. **Instal dependensi:**
    ```bash
    npm install
    ```
 
-2. **Set up the database:**
+2. **Siapkan basis data:**
    ```bash
    # Generate Prisma client
    npm run db:generate
-   
-   # Push the schema to database
+
+   # Push skema ke database
    npm run db:push
-   
-   # Seed the database with sample data
+
+   # Seed database dengan data contoh
    npm run db:seed
    ```
 
-3. **Start the development server:**
+3. **Jalankan server pengembangan:**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser and visit:** `http://localhost:3000`
+4. **Buka browser dan kunjungi:** `http://localhost:3000`
 
-## Available Scripts
+## Skrip yang Tersedia
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run db:push` - Push database schema
-- `npm run db:studio` - Open Prisma Studio
-- `npm run db:migrate` - Run database migrations
+- `npm run dev` - Menjalankan server pengembangan
+- `npm run build` - Build untuk produksi
+- `npm run preview` - Pratinjau build produksi
+- `npm run db:push` - Push skema database
+- `npm run db:studio` - Buka Prisma Studio
+- `npm run db:migrate` - Jalankan migrasi database
 - `npm run db:generate` - Generate Prisma client
-- `npm run db:seed` - Seed database with sample data
+- `npm run db:seed` - Seed database dengan data contoh
 
-## Project Structure
+## Struktur Proyek
 
 ```
-├── assets/           # Static assets (CSS, images, etc.)
-├── components/       # Vue components
-├── lib/             # Utility libraries
-├── pages/           # Application pages
-├── prisma/          # Database schema and migrations
-├── server/          # Server-side API routes
-└── types/           # TypeScript type definitions
+├── assets/           # Aset statis (CSS, gambar, dll.)
+├── components/       # Komponen Vue
+├── lib/              # Library utilitas
+├── pages/            # Halaman aplikasi
+├── prisma/           # Skema database dan migrasi
+├── server/           # API routes sisi server
+└── types/            # Definisi tipe TypeScript
 ```
 
-## Database
+## Basis Data
 
-This project uses SQLite for development with Prisma as the ORM. The database includes:
+Proyek ini menggunakan Mysql untuk pengembangan dengan Prisma sebagai ORM. Basis data mencakup:
 
-- **Users**: User management with email and name
-- **Posts**: Blog posts with title, content, and publish status
+- **Users**: Manajemen pengguna dengan email dan nama
+- **Posts**: Postingan blog dengan judul, konten, dan status publikasi
 
 ## API Routes
 
-- `GET /api/users` - Get all users
-- `POST /api/users` - Create a new user
-- `GET /api/stats` - Get application statistics
+- `GET /api/users` - Mendapatkan semua pengguna
+- `POST /api/users` - Membuat pengguna baru
+- `GET /api/stats` - Mendapatkan statistik aplikasi
 
-## Tech Stack
+## Teknologi yang Digunakan
 
 - **Framework**: Nuxt 3
 - **UI Library**: Nuxt UI (Tailwind CSS + HeadlessUI)
-- **Database**: SQLite + Prisma ORM
-- **TypeScript**: Full type safety
+- **Database**: Mysql + Prisma ORM
+- **TypeScript**: Dukungan tipe penuh
 - **Icons**: Heroicons
 - **Styling**: Tailwind CSS
 
-## Environment Variables
+## Variabel Lingkungan
 
-Create a `.env` file in the root directory:
+Buat file `.env` di direktori root:
 
 ```env
-DATABASE_URL="file:./dev.db"
+DATABASE_URL=mysql://root@localhost:3306/lsp_digital
 ```
 
-## Contributing
+## Kontribusi
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork repositori ini
+2. Buat branch fitur Anda (`git checkout -b fitur/fitur-keren`)
+3. Commit perubahan Anda (`git commit -m 'Tambah fitur keren'`)
+4. Push ke branch (`git push origin fitur/fitur-keren`)
+5. Buka Pull Request
 
-## License
+## Komit Semantik
 
-This project is licensed under the MIT License.
+Pesan komit semantik membantu mendeskripsikan tujuan perubahan secara standar, sehingga riwayat proyek lebih mudah dipahami.
+
+| Tipe     | Kegunaan                                               |
+|----------|--------------------------------------------------------|
+| feat     | Penambahan fitur baru                                  |
+| fix      | Memperbaiki bug                                        |
+| docs     | Perubahan dokumentasi saja                             |
+| style    | Perubahan format/penulisan kode tanpa mengubah logika  |
+| refactor | Refactor kode tanpa menambah fitur atau memperbaiki bug|
+| perf     | Peningkatan performa                                   |
+| test     | Menambah/memperbaiki pengujian                         |
+| chore    | Perubahan lain yang tidak mempengaruhi kode produksi   |
+
+Contoh:  
+`feat: tambah halaman login`  
+`fix: perbaiki error pada validasi email`  
+`docs: perbarui dokumentasi README`  
+`style: format kode dengan Prettier`  
+`refactor: refactor fungsi autentikasi`  
+`perf: optimalkan query database`  
+`test: tambah unit test untuk komponen`  
+`chore: update dependensi`
+
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah Lisensi MIT.
