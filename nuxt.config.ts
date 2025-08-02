@@ -5,13 +5,24 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/eslint'
   ],
-  css: ['~/assets/css/main.css'],
+  css: ['~/frontend/shared/assets/css/main.css'],
+  dir: {
+    pages: 'frontend/pages',
+    assets: 'frontend/shared/assets'
+  },
+  serverDir: 'backend/server',
+  srcDir: '.',
+  components: [
+    {
+      path: '~/frontend/shared/components',
+      pathPrefix: false
+    }
+  ],
   colorMode: {
     preference: 'system'
   },
   ui: {
-    global: true,
-    icons: ['heroicons', 'simple-icons']
+    global: true
   },
   runtimeConfig: {
     // Private keys (only available on server-side)
@@ -24,6 +35,24 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       wasm: true
+    },
+    storage: {
+      redis: {
+        driver: 'memory'
+      }
+    },
+    rollupConfig: {
+      external: (id) => {
+        return id.includes('@prisma/client') || id.includes('.prisma')
+      }
+    }
+  },
+  vite: {
+    optimizeDeps: {
+      exclude: ['@prisma/client']
+    },
+    define: {
+      global: 'globalThis'
     }
   }
 })
