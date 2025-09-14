@@ -28,7 +28,9 @@ class PendaftaranController extends Controller
                     'trx_jadwal_asesmen.start_date as tanggal_mulai',
                     'b.id as id_skema',
                     'b.skema_sertifikasi as nama_skema',
+                    'c.id as id_tuk',
                     'c.nama as nama_tuk',
+                    'e.id as id_asesor',
                     'e.nama as nama_asesor'
                 );
 
